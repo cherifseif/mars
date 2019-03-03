@@ -1,0 +1,40 @@
+
+<h1>Ajout Reservation</h1>
+
+<div class="form-group">
+  <label>Title</label>
+  <input type="text" class="form-control" [(ngModel)]="reservation.title">
+</div>
+
+<div class="form-group">
+  <label>Description</label>
+  <input type="text" class="form-control" [(ngModel)]="reservation.description">
+</div>
+
+<div class="form-group">
+  <label>Destination</label>
+  <input type="text" class="form-control" [(ngModel)]="reservation.destination">
+</div>
+
+<div class="form-group">
+  <label>Type de Reservation</label>
+  <select [(ngModel)]="reservation.reservation_type">
+    <option value="vol">Par Vol</option>
+    <option value="hotel">Par hotel</option>
+    <option value="excurtion">Excurtion</option>
+
+  </select> 
+ 
+</div>
+
+<div class="form-group">
+  <label>Price</label>
+  <input type="text" class="form-control" [(ngModel)]="reservation.price">
+</div>
+
+<div class="form-group">
+  <label>Date départ</label>
+  <input type="date" class="form-control" [(ngModel)]="reservation.start_date">
+</div>
+
+<button class="btn btn-success" (click)="addReservation()">Save</button>

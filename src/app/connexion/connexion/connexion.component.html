@@ -1,0 +1,8 @@
+
+<div class="parent">
+<h1>@Input / @OutPut</h1>
+  <div class="fils">
+    <app-inscription [userName]="userNameValue"  (sendData)="displayresponse($event)" ></app-inscription>
+  </div>
+  <h3>@Output: </h3> {{displayDataFromFils}}
+</div>

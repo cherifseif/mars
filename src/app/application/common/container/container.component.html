@@ -1,0 +1,68 @@
+
+<button class="btn btn-success" [disabled]="status" (click)="hello()">Save</button>
+
+<br>
+<button class="btn btn-danger" (click)="decrement()">-</button>
+
+<span> {{counter}}</span>
+<button class="btn btn-success" (click)="incredment()">+</button>
+
+
+<br>
+<br>
+
+<input [(ngModel)]="username">
+<p>Hello {{username}}!</p>
+
+<hr>
+
+
+<div class="form-group">
+  <label>Nom & Prenom</label>
+  <input class="form-control" [(ngModel)]="name">
+</div>
+<div class="form-group">
+  <label>Email</label>
+  <input class="form-control" [(ngModel)]="useremail">
+</div>
+<div class="form-group">
+  <label>Phone</label>
+  <input class="form-control" [(ngModel)]="userphone">
+</div>
+<div class="form-group">
+  <label>About</label>
+  <textarea class="form-control" [(ngModel)]="userabout"></textarea>
+</div>
+
+<br>
+<button class="btn btn-danger" (click)="annuler()">Annuler</button> 
+<button class="btn btn-success" *ngIf="name!=='' && name!==undefined" (click)="save()">Valider</button>
+
+<hr>
+
+<br>
+<table class="table">
+  <thead>
+      <tr>
+          <th>Search By Name :</th>
+          <th><input class="form-control" [(ngModel)]="item"></th>
+      </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let h of HEROES | search:item" [ngClass]="{'black':h.name==='Batman', 'red':h.name==='Superman', 'yellow':h.name==='Robin'}">
+      <td>{{h.id}}</td>
+      <td>{{h.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<br>
+<mat-radio-group>
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>

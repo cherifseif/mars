@@ -1,0 +1,31 @@
+<h3>Traduction :</h3>{{'hello'|translate}}
+
+<br>
+<table class="table">
+  <thead>
+    <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Destination</th>
+        <th>Start Date</th>
+        <th>Type Reservation</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let res of reservations">
+      <td>{{res.title}}</td>
+      <td>{{res.description}}</td>
+      <td>{{res.destination}}</td>
+      <td>{{res.start_date | date:'MM/dd/yyyy'}}</td>
+      <td>{{res.reservation_type}}</td>
+      <td>{{res.price}}</td>
+      <td>{{res.status}}</td>
+      <td><i [routerLink]="['update', res._id]" class="fa fa-pencil-square-o" aria-hidden="true"></i>   
+          <i (click)="delete(res._id)" class="fa fa-trash-o" aria-hidden="true"></i>    
+      </td>
+    </tr>
+  </tbody>
+</table>
